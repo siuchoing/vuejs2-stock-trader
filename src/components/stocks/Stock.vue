@@ -43,8 +43,14 @@
                     stockPrice: this.stock.price,
                     quantity: this.quantity
                 };
-                console.log(order);
+                // call the actions of buyStock, and passing second argument to the action
+                this.$store.dispatch('buyStock', order);
                 this.quantity = 0;
+
+                /*****************
+                 * show order
+                 */
+                //console.log(order);
             }
         }
     }
