@@ -39,16 +39,18 @@
             }
         },
         methods: {
-            ...mapActions([
-                'sellStock'
-            ]),
+            // To prevent duplicate the name of method and action, is "sellStock"
+            ...mapActions({
+                placeSellOrder: 'sellStock'         // assign the new name
+            }),
             sellStock() {
                 const order = {
                     stockId: this.stock.id,
                     stockPrice: this.stock.price,
                     quantity: this.quantity
                 };
-                this.sellStock();
+                this.placeSellOrder(order);
+                this.quantity = 0;
             }
         }
     }
