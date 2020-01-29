@@ -9,7 +9,14 @@ const mutations = {
     'SET_STOCKS' (state, stocks) {
         state.stocks = stocks;
     },
+    /***************
+     * Math.random()        // floating-point, pseudo-random number between 0 and 1
+     * Math.round()         // rounded to the nearest integer
+     */
     'RND_STOCKS' (state) {
+        state.stocks.forEach(stock => {
+            stock.price = Math.round(stock.price * (1 + Math.random() - 0.5));
+        });
     }
 };
 
