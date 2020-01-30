@@ -9,7 +9,7 @@ import store from './store/store';
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-Vue.http.options.root = 'https://vuejs2-stock-trader-6ee34.firebaseio.com/'
+Vue.http.options.root = 'https://vuejs2-stock-trader-6ee34.firebaseio.com/';
 
 Vue.filter('currency', (value) => {
   return '$' + value.toLocaleString();
@@ -24,5 +24,5 @@ new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App),
+  render: h => h(App)
 })
