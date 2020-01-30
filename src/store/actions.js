@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-export const loadData = ({commit} => {
+export const loadData = ({commit}) => {
    Vue.http.get('data.json')
        .then(response => response.json)
        .then(data => {
@@ -18,4 +18,4 @@ export const loadData = ({commit} => {
                commit('SET_PORTFOLIO', stockPortfolio); // commit mutation in portfolio.js
            }
        })
-});
+};
