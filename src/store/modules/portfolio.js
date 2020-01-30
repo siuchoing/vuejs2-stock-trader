@@ -29,10 +29,10 @@ const mutations = {
         }
         state.funds += stockPrice * quantity;   // Total capital after sell
     },
+    // To override portfolio when click 'loadData' button
     'SET_PORTFOLIO' (state, portfolio) {
-        // Passing portfolio to getters
-        state.funds = portfolio.funds;          // show current total capital
-        state.stocks = portfolio.stockPortfolio ? portfolio.stockPortfolio : [];
+        state.funds = portfolio.funds;                                              // update funds
+        state.stocks = portfolio.stockPortfolio ? portfolio.stockPortfolio : [];    // update stocks
     }
 };
 
