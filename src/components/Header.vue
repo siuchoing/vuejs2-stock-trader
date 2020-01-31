@@ -61,7 +61,7 @@
                 const data = {
                     funds: this.$store.getters.funds,
                     stockPortfolio: this.$store.getters.stockPortfolio,
-                    stock: this.$store.getters.stocks
+                    stocks: this.$store.getters.stocks
                 };
                 // Globally
                 this.$http.put('data.json', data);
