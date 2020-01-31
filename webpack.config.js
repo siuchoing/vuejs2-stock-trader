@@ -47,12 +47,14 @@ if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
+      // production mode will strip out some additional warnings vuejs
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: '"production"'
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
+      // This Plugin will minifies words, and make more compact code.
       compress: {
         warnings: false
       }
