@@ -51,9 +51,11 @@
             }
         },
         methods: {
-            ...mapActions([
-                'randomizeStocks'
-            ]),
+            // rewrite mapActions to prevent duplicate name
+            ...mapActions({
+                randomizeStocks: 'randomizeStocks',
+                fetchData: 'loadData'
+            }),
             endDay() {
                 this.randomizeStocks();
             },
@@ -67,7 +69,7 @@
                 this.$http.put('data.json', data);
             },
             loadData() {
-
+                this.fetchData();
             }
         }
     }
